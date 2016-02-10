@@ -1,0 +1,60 @@
+body,
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0; 
+}
+
+/*********** LAYOUT ***********/
+
+header {
+	height: 10%;
+	background: pink;	
+}
+
+section {
+	height: 80%;
+}
+
+footer {
+	height: 10%;
+	background: red;	
+}
+
+/*********** OTHER STYLES ***********/
+
+.right {
+    background: green;
+    padding: 20px;
+    height: 100%;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    overflow: auto;
+}
+
+.film-list {
+	padding-left: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+p {
+	padding: 10px;
+}
+
+img {
+	width: 100%;
+}
+
+/*********** MEDIA QUERIES ***********/
+
+@media (max-width: 768px) { 
+	.right {
+		background: orange;
+		position: relative;
+	}
+}
