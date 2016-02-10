@@ -90,27 +90,31 @@ var markers = [];
 
 		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-		var infoWindow = new google.maps.InfoWindow();
+		// var infoWindow = new google.maps.InfoWindow();
 
-	  for (var i = 0; i < films.length; i++) {
-	    createMarker(i);
-	  }
+	  // for (var i = 0; i < films.length; i++) {
+	  //   createMarker(i);
+	  // }
+
+	  films.forEach(createMarker);
+	  
 	}
 
 	function createMarker(i){
 		// console.log(i);
-			var data = films[i];
-			var myLatLng = new google.maps.LatLng(data.location.lat, data.location.lng);
+			// var data = films[i];
+			// console.log(data);
+			var myLatLng = new google.maps.LatLng(i.location.lat, i.location.lng);
 			// console.log(data.location.lat, data.location.lng)
 			
 	    var marker = new google.maps.Marker({
 	        map: map,
-	        image: data.image,
-	        title: data.title,
+	        image: i.image,
+	        title: i.title,
 	        position: myLatLng
 	    });
 	    // console.log(marker.image)
-	    createLine(data);
+	    createLine(i);
 	}
 
 	function createLine(data) {
