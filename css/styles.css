@@ -9,28 +9,30 @@ html {
 
 header {
 	height: 10%;
-	background: pink;	
+	width: 100%;
+	/*background: pink;*/
 }
 
 section {
 	height: 80%;
 }
 
+aside {
+	height: 80%;
+}
+
 footer {
+	width: 100%;
 	height: 10%;
-	background: red;	
+	/*background: red;*/
 }
 
 /*********** OTHER STYLES ***********/
 
 .right {
-    background: green;
+    background: #F5F5F5;
     padding: 20px;
     height: 100%;
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    bottom: 0;
     overflow: auto;
 }
 
