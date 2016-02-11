@@ -2,28 +2,29 @@ body,
 html {
 	height: 100%;
 	margin: 0;
-	padding: 0; 
+	padding: 0;
+	color: #2d4052;
 }
 
 /*********** LAYOUT ***********/
 
 header {
-	height: 10%;
+	height: 11.5%;
 	width: 100%;
 	/*background: pink;*/
 }
 
 section {
-	height: 80%;
+	height: 78%;
 }
 
 aside {
-	height: 80%;
+	height: 78%;
 }
 
 footer {
 	width: 100%;
-	height: 10%;
+	height: 10.5%;
 	/*background: red;*/
 }
 
@@ -37,7 +38,12 @@ footer {
 }
 
 .film-list {
+	/*width: 100%;*/
 	padding-left: 0;
+}
+
+.footer-text {
+	text-align: center;
 }
 
 li {

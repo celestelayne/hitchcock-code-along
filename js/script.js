@@ -66,7 +66,7 @@ var films = [
 var filmList = document.querySelector('.film-list');
 
 var map;
-var markers = [];
+// var markers = [];
 
 // Functions
 // ------------------------------------------------
@@ -100,26 +100,23 @@ var markers = [];
 	  
 	}
 
-	function createMarker(i){
-		// console.log(i);
-			// var data = films[i];
-			// console.log(data);
-			var myLatLng = new google.maps.LatLng(i.location.lat, i.location.lng);
-			// console.log(data.location.lat, data.location.lng)
-			
-	    var marker = new google.maps.Marker({
-	        map: map,
-	        image: i.image,
-	        title: i.title,
-	        position: myLatLng
-	    });
-	    // console.log(marker.image)
-	    createLine(i);
+	function createMarker(data){
+		console.log(data);
+		var myLatLng = new google.maps.LatLng(data.location.lat, data.location.lng);
+		
+    var marker = new google.maps.Marker({
+        map: map,
+        image: data.image,
+        title: data.title,
+        position: myLatLng
+    });
+    // console.log(marker.image)
+    createLine(data);
 	}
 
-	function createLine(data) {
+	function createLine(result) {
 		// make sure you're passing in the data you think you are
-		// console.log(data);
+		console.log(result);
 		// create the elements 
 		var li = document.createElement('li');
 		var p = document.createElement("p");
@@ -127,11 +124,11 @@ var markers = [];
 		// dynamically add the bootstrap panel class to the list item
 		li.classList.add('panel');
 		// dynamically set the img src attribute 
-		img.setAttribute('src', data.image);
+		img.setAttribute('src', result.image);
 		// console.log(img);
 
 		// set the innerHTML of the p tag with the content from the json
-		p.innerHTML = 'Movie Name: ' + data.title + '<br>' +  'Movie Year: ' + data.year + '<br>' + 'Produced by: ' + data.production_company + '<br>' + 'Starring: ' + data.actors;
+		p.innerHTML = 'Movie Name: ' + result.title + '<br>' +  'Movie Year: ' + result.year + '<br>' + 'Produced by: ' + result.production_company + '<br>' + 'Starring: ' + result.actors;
 
 		// append the p and img tags to the list item
 		// append the list item to the ul class filmList
