@@ -9,22 +9,22 @@ html {
 /*********** LAYOUT ***********/
 
 header {
-	height: 11.5%;
+	height: 8%;
 	width: 100%;
 	/*background: pink;*/
 }
 
 section {
-	height: 78%;
+	height: 85%;
 }
 
 aside {
-	height: 78%;
+	height: 85%;
 }
 
 footer {
 	width: 100%;
-	height: 10.5%;
+	height: 7%;
 	/*background: red;*/
 }
 

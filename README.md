@@ -1,5 +1,9 @@
 # Google Maps Code Along
 
+## Visualizing Hitchcock Mockup
+This is what we'll be building:
+![Website Mockup](/starter-code/visualizing-hitchcock-mockup.png)
+
 ## Step 1
 ------
 #### Set up the HTML document and layout
