@@ -6,6 +6,18 @@ html {
 	color: #2d4052;
 }
 
+li {
+	list-style-type: none;
+}
+
+p {
+	padding: 10px;
+}
+
+img {
+	width: 100%;
+}
+
 /*********** LAYOUT ***********/
 
 header {
@@ -46,23 +58,11 @@ footer {
 	text-align: center;
 }
 
-li {
-	list-style-type: none;
-}
-
-p {
-	padding: 10px;
-}
-
-img {
-	width: 100%;
-}
-
 /*********** MEDIA QUERIES ***********/
 
 @media (max-width: 768px) { 
 	.right {
 		background: orange;
-		position: relative;
+		/*position: relative;*/
 	}
 }

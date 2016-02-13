@@ -47,7 +47,7 @@ This is what we'll be building:
 </body>
 ```
 #### Start with the basic layout of the page 
-Include a <header>, <section>, <aside> and <footer>. These elements go inside the body tags.
+Include a `<header>`, `<section>`, `<aside>` and `<footer>`. These elements go inside the body tags.
 ```sh
 <header></header>
 <section></section>

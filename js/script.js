@@ -114,25 +114,54 @@ var map;
     createLine(data);
 	}
 
+		// create the elements 
+		var li = document.createElement('li');
+		var h3 = document.createElement("h3");
+		var h4 = document.createElement("h4");
+		var h6 = document.createElement("h6");
+		var img = document.createElement("img");
+
 	function createLine(result) {
 		// make sure you're passing in the data you think you are
 		console.log(result);
-		// create the elements 
-		var li = document.createElement('li');
-		var p = document.createElement("p");
-		var img = document.createElement("img");
+
 		// dynamically add the bootstrap panel class to the list item
-		li.classList.add('panel');
+		li.classList.add('panel', 'panel-default');
+
 		// dynamically set the img src attribute 
 		img.setAttribute('src', result.image);
-		// console.log(img);
 
 		// set the innerHTML of the p tag with the content from the json
-		p.innerHTML = 'Movie Name: ' + result.title + '<br>' +  'Movie Year: ' + result.year + '<br>' + 'Produced by: ' + result.production_company + '<br>' + 'Starring: ' + result.actors;
+		var filmHeader = result.title + ', ' + result.year;
+		h3.textContent = filmHeader;
+
+		var filmCompany = result.production_company;
+		h4.textContent = filmCompany;
+
+		var eachActor = result["actors"];
+		h6.textContent = eachActor; 
+		// eachActor.forEach(displayActor);
+
+		// h6.textContent = actorName;
+		// console.log(eachActor)
 
 		// append the p and img tags to the list item
 		// append the list item to the ul class filmList
-		li.appendChild(p);
-		li.appendChild(img)
+		li.appendChild(h3);
+		li.appendChild(h4);
+		li.appendChild(h6);
+		li.appendChild(img);
 		filmList.appendChild(li);
+	}
+
+	function displayActor(actor){
+		// actorName = i;
+		console.log(actor)
+		// create the element
+		// decorate it element 
+		// console.log(actor)
+		// h6.textContent = actor;
+		// li.appendChild(h6);
+		// append it to dom 
+
 	}
