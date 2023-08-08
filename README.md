@@ -8,7 +8,7 @@ This is what we'll be building:
 ------
 #### Set up the HTML document and layout
 - In your blank `index.html` file, set up the bones for what will be your project.
-```sh
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +24,7 @@ This is what we'll be building:
 - For this exercise, we'll be using the Bootstrap CDN (content delivery network). In the `<head>` you'll add the stylesheet `<links>` and `<meta>` tags.
 - Just above the closing `</body>` tag, you'll add the javascript files (starting with jquery), which bootstrap relies on to function and finally the javascript file that you'll be creating for your project.
 - See [Bootstrap documentation](http://getbootstrap.com/getting-started/#template) for guideance on how to structure your starting document.
-```sh
+```html
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,7 @@ This is what we'll be building:
 ```
 #### Start with the basic layout of the page 
 Include a `<header>`, `<section>`, `<aside>` and `<footer>`. These elements go inside the body tags.
-```sh
+```html
 <header></header>
 <section></section>
 <aside></aside>
@@ -62,7 +62,7 @@ Include a `<header>`, `<section>`, `<aside>` and `<footer>`. These elements go i
     * col-lg ≥ 1200px (e.g. large desktops, smart TVs)
 - For this exercise, we're going to focus on the **first three screen sizes**
 - In the **left colum**, we're going to place our Google Map, and in the right column, we're going to render our films.
-```sh
+```html
 <section id="map-canvas" class="col-xs-12 col-sm-6 col-md-8">Left Column</section>
 <aside>
     <div class="right col-xs-6 col-md-4">Right Column</div>
@@ -75,12 +75,12 @@ Include a `<header>`, `<section>`, `<aside>` and `<footer>`. These elements go i
 #### Test the Theory
 - In our `stylesheet.css` file, we'll colorblock our elements to make sure our layout looks the way we expect it to.
 The HTML will look like this:
-```sh
+```html
 <div class="col-xs-12 col-sm-6 col-md-8">Left Column</div>
 <div class="right col-xs-12 col-md-4">Right Column</div>
 ```
 The CSS will look like this:
-```sh
+```css
 header {
 	height: 10%;
 	background: pink;	
@@ -107,7 +107,7 @@ footer {
 - Go to the [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/)
 - Get your [API Key](https://developers.google.com/maps/documentation/javascript/get-api-key). The JavaScript API will only work with a Browser key.
 - Add the script to the bottom of your file, along with the other `<script>` tags
-```sh
+```html
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
   type="text/javascript"></script>
 ```
@@ -115,7 +115,7 @@ footer {
 
 #### Initialize Google Maps
 - In the script.js file, we initialize the map with the function `initMap()` and add the function that sets the coordinates and zoom level. Use the [Google Maps documentation](https://developers.google.com/maps/documentation/javascript/examples/map-simple) for guidance on how to structure the function.
-```sh
+```js
 console.log('Sanity Check: app.js is working!');
 // global map variable
 var map;
@@ -134,7 +134,7 @@ function initMap() {
 #### Add Markers to the Map
 - We have the json object hard-coded into the top of the script file.
 - Loop through the films using a [for loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) or a [forEach method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) so that we can apply the function that adds markers to the map, to EACH of the films. Note: this code goes INSIDE the initMap() function.
-```sh
+```js
 // for loop
     for (var i = 0; i < films.length; i++) {
         createMarker(i);
@@ -143,7 +143,7 @@ function initMap() {
     films.forEach(createMarker);
 ```
 - Now, we write the function that will create and add markers to the map. Use [Google Maps documentation](https://developers.google.com/maps/documentation/javascript/examples/marker-simple) for how to structure this code.
-```sh
+```js
 function createMarker(data){
 		console.log(data);
 		var myLatLng = new google.maps.LatLng(data.location.lat, data.location.lng);
@@ -161,16 +161,16 @@ function createMarker(data){
 ------
 #### Append Data to DOM
 - In the aside element, we'll add an unordered list (similar to our to-do list example) `<ul>` with a class of '.film-list' This is where the list items will be appended.
-```ssh
+```html
 <ul class="film-list"></ul>
 ```
 - Grab the unordered list and save it to a variable, filmList.
-```ssh
+```js
 var filmList = document.querySelector('.film-list');
 ```
 - Create a `<li>` to hold each of the panels, `<p>` and `<img>` tags. Note: a panel is like a Pinterest card.
 - Dynamically create Bootstrap [panels](http://getbootstrap.com/components/#panels);
-```ssh
+```js
 function createLine(result) {
 		// make sure you're passing in the data you think you are
 		console.log(result);
